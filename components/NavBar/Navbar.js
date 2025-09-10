@@ -7,6 +7,7 @@ import { Sun, Moon, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import TripsNavBar from "./TripsNavBar";
+import Image from "next/image";
 
 const navItems = [
     { label: "About Us", href: "/about" },
@@ -42,7 +43,13 @@ const Navbar = () => {
           ${resolvedTheme === "dark" ? "bg-black/80 text-white" : "bg-white/80 text-black"} shadow-sm
           ${isScrolled ? "-translate-y-full" : "translate-y-0"}`}>
                 <div className="container mx-auto flex justify-between items-center">
-                    <Link href="/" className="text-xl font-bold">TRAVEEO</Link>
+                    <Link href="/">
+                        <Image src="/assets/traveeo.png" // put your logo image inside public/logo.png
+                            alt="Traveeo Logo"
+                            width={200}
+                            height={200}
+                            />
+                    </Link>
 
                     <div className="hidden md:flex items-center gap-6">
                         {navItems.map((item) => (
@@ -89,11 +96,11 @@ const Navbar = () => {
             </nav>
 
             {/* Secondary Navbar */}
-            <nav className={`fixed top-0 left-0 right-0 z-40 p-3 shadow-md transition-transform duration-300
+            {/* <nav className={`fixed top-0 left-0 right-0 z-40 p-3 shadow-md transition-transform duration-300
           ${resolvedTheme === "dark" ? "bg-black/80 text-white" : "bg-white/80 text-black"}
           ${isScrolled ? "translate-y-0" : "translate-y-[72px]"} `}>
                 <TripsNavBar />
-            </nav>
+            </nav> */}
         </>
     );
 };

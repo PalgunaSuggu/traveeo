@@ -55,9 +55,8 @@ const HowToPlan = () => {
           return (
             <div
               key={index}
-              className={`flex flex-col md:flex-row items-center ${
-                isLeft ? "" : "md:flex-row-reverse"
-              }`}
+              className={`flex flex-col md:flex-row items-center ${isLeft ? "" : "md:flex-row-reverse"
+                }`}
             >
               {/* Number Circle */}
               <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[#0C5FA8] text-white flex items-center justify-center text-2xl font-bold shadow-lg">

@@ -36,7 +36,7 @@ const Upcomingtrips = () => {
   };
 
   return (
-    <section className="flex items-center justify-center min-h-screen w-full py-10 px-4 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section className="flex items-center justify-center min-h-screen w-full py-10 px-4 transition-colors duration-300">
       <div className="max-w-7xl w-full">
         {/* Section Heading */}
         <div className="text-center mb-10">
@@ -50,11 +50,11 @@ const Upcomingtrips = () => {
         </div>
 
         {/* Trips Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {trips.slice(0, visibleTrips).map((trip) => (
             <div
               key={trip.id}
-              className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 transition-colors duration-300"
+              className="rounded-2xl overflow-hidden shadow-lg border-dashed border-[#1076BE] dark:border-[#FAA31A] border-2 transition-colors duration-300"
             >
               {/* Trip Image */}
               <div className="relative h-48 w-full">

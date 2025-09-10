@@ -22,39 +22,36 @@ export function WhyWithUs() {
 
 export const projects = [
     {
-        title: "Automated Shipping Bills Validation",
+        title: "End-to-End Planning",
         description:
-            "Easily validate all your shipping bills with automation to ensure compliance and error-free processing.",
-        link: "https://www.leremitt.com",
+            "From the big picture to the smallest detail, we handle all the logistics so you can travel stress-free.",
+        link: "",
     },
     {
-        title: "Centralized Export Documentation",
-        description:
-            "Manage, share, and track all your export-related documents in a single secure platform.",
-        link: "https://www.leremitt.com",
+        title: "Insider Access & Local Gems",
+        description: "Discover hidden spots and authentic experiences that most tourists miss, thanks to our on-the-ground connections.",
+        link: "",
     },
     {
-        title: "Customs Interface (ICEGATE)",
-        description:
-            "Direct integration with ICEGATE for seamless shipment lodging and customs documentation.",
-        link: "https://www.leremitt.com",
+        title: "Experiences That Bring You Closer",
+        description: "Think bonding adventures, shared laughs, and memories you’ll be talking about for years.",
+        link: "",
     },
     {
-        title: "Smart Logistics Management",
+        title: "24/7 Support While You Travel",
         description:
-            "Book shipments, generate BLs, and track cargo with integrated freight forwarder tools.",
-        link: "https://www.leremitt.com",
+            "Whether it’s a delayed flight or a last-minute change, we’re always just a call or message away.",
+        link: "",
     },
     {
-        title: "Banking & Payments Simplified",
-        description:
-            "Use LeRemitt and connected bank portals to manage payments, forex, and export financing.",
-        link: "https://www.leremitt.com",
+        title: "Safety Comes First",
+        description: "We choose trusted guides and family-friendly experiences, so you can explore with confidence.",
+        link: "",
     },
     {
-        title: "Inventory & Order Management",
-        description:
-            "Streamline inventory tracking and order processing to improve efficiency across exports.",
-        link: "https://www.leremitt.com",
+        title: "Clarity and Transparency",
+        description: "No hidden agendas, no surprises—just clear communication and honest guidance throughout the process.",
+        link: "",
     },
 ];
+
