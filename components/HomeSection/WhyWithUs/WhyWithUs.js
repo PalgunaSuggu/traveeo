@@ -4,13 +4,15 @@ export function WhyWithUs() {
     return (
         <div className="flex flex-col justify-center items-center min-h-screen px-8 text-center">
             {/* Heading Section */}
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
-                Why Select To Travel With Us?
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
-                We make your journeys seamless, safe, and memorable with our trusted
+               <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Why Select To Travel With Us?
+                </h2>
+                <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                  We make your journeys seamless, safe, and memorable with our trusted
                 services and innovative solutions for every kind of traveler.
-            </p>
+                </p>
+            </div>
 
             {/* Cards */}
             <div className="w-full max-w-6xl">
