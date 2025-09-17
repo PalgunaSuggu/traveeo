@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const navItems = [
     { label: "About Us", href: "/about" },
-    { label: "Blogs", href: "/" },
+    { label: "Blogs", href: "/blogs" },
     { label: "Careers", href: "/careers" },
     { label: "Contact Us", href: "/contact" },
 ];
@@ -48,7 +48,7 @@ const Navbar = () => {
                             alt="Traveeo Logo"
                             width={200}
                             height={200}
-                            />
+                        />
                     </Link>
 
                     <div className="hidden md:flex items-center gap-6">
