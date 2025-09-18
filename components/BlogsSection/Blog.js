@@ -22,7 +22,7 @@ const Blog = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto py-12 md:pt-40 px-4">
+        <div className="max-w-7xl mx-auto py-12 md:pt-40">
             {/* Page Heading */}
             <div className="text-center mb-12">
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -43,7 +43,7 @@ const Blog = () => {
                     >
                         <img src={blog.image} alt={blog.title} className="w-full object-cover" />
                         <div className="p-4">
-                            <h3 className="text-lg font-semibold mb-2">{blog.title}</h3>
+                            <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
                             <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">{blog.description}</p>
                             <span className="text-xs text-gray-400">{blog.date}</span>
                         </div>

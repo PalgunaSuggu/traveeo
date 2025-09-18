@@ -66,31 +66,39 @@ const HomeBlogs = () => {
                         <Link
                             key={blog.id}
                             href={blog.link}
-                            className="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                            className="group block rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-gray-900 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-yellow-400 overflow-hidden"
                         >
-                            <img src={blog.image} alt={blog.title} className="w-full h-64 object-cover" />
-                            <div className="p-6">
-                                <h3 className="text-2xl font-semibold mb-2">{blog.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-300 mb-4">{blog.description}</p>
-                                <span className="text-sm text-gray-400">{blog.date}</span>
+                            <div className="overflow-hidden">
+                                <div className="w-full aspect-[16/9]">
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                </div>
+                            </div>
+                            <div className="p-5">
+                                <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-1">{blog.title}</h3>
+                                <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">{blog.description}</p>
+                                <span className="text-xs text-gray-500 dark:text-gray-400">{blog.date}</span>
                             </div>
                         </Link>
                     ))}
                 </div>
 
-                {/* Bottom 3 Blogs */}
+                {/* Bottom 3 cards */}
                 <div className="grid md:grid-cols-3 gap-6">
-                    {blogs.slice(2).map((blog) => (
+                    {blogs.slice(2, 5).map((blog) => (
                         <Link
                             key={blog.id}
                             href={blog.link}
-                            className="bg-white dark:bg-gray-900 rounded-xl shadow overflow-hidden hover:shadow-md transition-shadow duration-300"
+                            className="group block rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-gray-900 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-yellow-400 overflow-hidden"
                         >
-                            <img src={blog.image} alt={blog.title} className="w-full h-40 object-cover" />
-                            <div className="p-4">
-                                <h3 className="text-xl font-semibold mb-1">{blog.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">{blog.description}</p>
-                                <span className="text-xs text-gray-400">{blog.date}</span>
+                            <div className="overflow-hidden">
+                                <div className="w-full aspect-[16/9]">
+                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                </div>
+                            </div>
+                            <div className="p-5">
+                                <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-1">{blog.title}</h3>
+                                <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">{blog.description}</p>
+                                <span className="text-xs text-gray-500 dark:text-gray-400">{blog.date}</span>
                             </div>
                         </Link>
                     ))}

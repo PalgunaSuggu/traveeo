@@ -20,7 +20,7 @@ const Banner = () => {
 
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                     Discover Your Next Adventure
                 </h1>
                 <p className="text-lg md:text-xl text-gray-200 mb-6">

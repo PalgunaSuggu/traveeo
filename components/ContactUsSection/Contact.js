@@ -9,21 +9,21 @@ import Link from "next/link";
 
 const Contact = () => {
   return (
-    <div className="h-[120vh] flex items-center justify-center bg-gray-50 dark:bg-black">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-black">
       <div className="w-full max-w-6xl">
         {/* Heading */}
         <div className="text-center my-12 text-gray-900 dark:text-white">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Get In Touch</h1>
-          <p className="text-xl max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Have a question, idea, or need support? We’re here to help.
             Reach out and our team will get back to you shortly.
           </p>
         </div>
 
         {/* Card Container */}
-        <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden grid md:grid-cols-2 shadow-lg">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden grid md:grid-cols-2 shadow-xl border border-gray-200 dark:border-white/10">
           {/* Contact Information */}
-          <div className="bg-[#0C5FA8] dark:bg-[#FAA31A] text-white p-8">
+          <div className="text-white p-8 bg-gradient-to-br from-[#0C5FA8] to-[#1076BE] dark:from-[#FAA31A] dark:to-[#e09215]">
             <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
 
             <div className="space-y-6">
@@ -56,28 +56,28 @@ const Contact = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="first_name">First Name <span className="text-red-500">*</span></Label>
-                  <Input id="first_name" name="first_name" required placeholder="John" />
+                  <Input id="first_name" name="first_name" required placeholder="John" className="mt-1 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 focus-visible:ring-2 focus-visible:ring-[#0C5FA8] dark:focus-visible:ring-[#FAA31A]" />
                 </div>
                 <div>
                   <Label htmlFor="last_name">Last Name <span className="text-red-500">*</span></Label>
-                  <Input id="last_name" name="last_name" required placeholder="Doe" />
+                  <Input id="last_name" name="last_name" required placeholder="Doe" className="mt-1 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border:white/10 focus-visible:ring-2 focus-visible:ring-[#0C5FA8] dark:focus-visible:ring-[#FAA31A]" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="to_email">Email <span className="text-red-500">*</span></Label>
-                  <Input id="to_email" name="to_email" type="email" required placeholder="your@email.com" />
+                  <Input id="to_email" name="to_email" type="email" required placeholder="your@email.com" className="mt-1 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 focus-visible:ring-2 focus-visible:ring-[#0C5FA8] dark:focus-visible:ring-[#FAA31A]" />
                 </div>
                 <div>
                   <Label htmlFor="phone">Phone Number <span className="text-red-500">*</span></Label>
-                  <Input id="phone" type="number" name="phone" required placeholder="+91 1234567890" />
+                  <Input id="phone" type="number" name="phone" required placeholder="+91 1234567890" className="mt-1 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 focus-visible:ring-2 focus-visible:ring-[#0C5FA8] dark:focus-visible:ring-[#FAA31A]" />
                 </div>
               </div>
 
               <div>
                 <Label htmlFor="description">Message</Label>
-                <Textarea id="description" name="description" placeholder="How can we help you?" className="h-24" />
+                <Textarea id="description" name="description" placeholder="How can we help you?" className="h-28 mt-1 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 focus-visible:ring-2 focus-visible:ring-[#0C5FA8] dark:focus-visible:ring-[#FAA31A]" />
               </div>
 
               <div className="flex items-start gap-2">

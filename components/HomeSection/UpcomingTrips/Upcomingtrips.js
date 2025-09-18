@@ -158,18 +158,32 @@ const Upcomingtrips = () => {
 
         {/* Trips Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {trips.slice(0, visibleTrips).map((trip) => (
+          {trips.slice(0, visibleTrips).map((trip, index) => {
+            const durationOptions = [
+              "1 Night and 2 Days",
+              "2 Nights and 3 Days",
+              "3 Nights and 4 Days",
+              "4 Nights and 5 Days",
+            ]; // Nights/Days
+            const durationLabel = durationOptions[trip.id % durationOptions.length];
+            return (
             <div
               key={trip.id}
-              className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 bg-white dark:bg-gray-900"
+              className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 bg-white dark:bg-gray-900 border border-gray-200 dark:border-white/10 hover:border-[#0C5FA8]/40 dark:hover:border-[#FAA31A]/40"
             >
               {/* Image with Overlay */}
               <div className="relative h-48 w-full">
                 <Image src={trip.image} alt={trip.title} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                {/* Duration Badge */}
+                <div className="absolute top-3 right-3">
+                  <span className="px-3 py-1 text-xs font-semibold rounded-full bg-white/90 text-gray-900 dark:bg-black/60 dark:text-white shadow">
+                    ⏱️ {durationLabel}
+                  </span>
+                </div>
                 <div className="absolute bottom-3 left-3 text-white">
-                  <h3 className="text-lg font-bold">{trip.title}</h3>
-                  <p className="text-sm opacity-90">{trip.price}</p>
+                  <h3 className="text-xl font-bold">{trip.title}</h3>
+                  <p className="text-sm text-[#FAA31A] dark:text-[#FAA31A] opacity-95">{trip.price}</p>
                 </div>
               </div>
 
@@ -187,13 +201,14 @@ const Upcomingtrips = () => {
                   >
                     Trip Details
                   </Button>
-                  <Button className="flex-1 bg-[#0C5FA8] text-white hover:bg-[#084478] dark:bg-[#FAA31A] dark:text-black dark:hover:bg-[#e09215]">
+                  <Button className="flex-1 text-white bg-gradient-to-r from-[#0C5FA8] to-[#1076BE] hover:from-[#0F6AB6] hover:to-[#1280CF] dark:from-[#FAA31A] dark:to-[#e09215] dark:text-black">
                     Send Quote
                   </Button>
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Load More */}
@@ -201,7 +216,7 @@ const Upcomingtrips = () => {
           <div className="flex justify-center mt-12">
             <Button
               onClick={handleLoadMore}
-              className="px-8 py-4 text-lg font-medium rounded-xl bg-gradient-to-r from-[#0C5FA8] to-[#1076BE] text-white hover:opacity-90 dark:from-[#FAA31A] dark:to-[#e09215] dark:text-black"
+              className="px-8 py-4 text-lg font-medium rounded-xl text-white bg-gradient-to-r from-[#0C5FA8] to-[#1076BE] hover:from-[#0F6AB6] hover:to-[#1280CF] dark:from-[#FAA31A] dark:to-[#e09215] dark:text-black"
             >
               Load More Trips
             </Button>

@@ -9,35 +9,35 @@ const steps = [
     title: "Choose Your Travel Destination",
     description:
       "From a buffet of trip itineraries handcrafted by our travel experts.",
-    icon: <MessageCircle className="w-10 h-10 text-[#0C5FA8]" />,
+    icon: <MessageCircle className="w-12 h-12 text-blue-600 dark:text-yellow-400" />,
   },
   {
     number: "02",
     title: "Ask Queries & Book Your Trip!",
     description:
       "Connect with us over a call, solve your queries and book your trip hassle-free.",
-    icon: <Headphones className="w-10 h-10 text-[#0C5FA8]" />,
+    icon: <Headphones className="w-12 h-12 text-blue-600 dark:text-yellow-400" />,
   },
   {
     number: "03",
     title: "Ohai, Your Trip Day Has Arrived",
     description:
       "Keep your adventure spirit high and pack your bags for a lifetime experience.",
-    icon: <Mountain className="w-10 h-10 text-[#0C5FA8]" />,
+    icon: <Mountain className="w-12 h-12 text-blue-600 dark:text-yellow-400" />,
   },
   {
     number: "04",
     title: "Share #InstaPerfect Memories...",
     description:
       "Flaunt your memorable travel memories over social media with your dear ones.",
-    icon: <Megaphone className="w-10 h-10 text-[#0C5FA8]" />,
+    icon: <Megaphone className="w-12 h-12 text-blue-600 dark:text-yellow-400" />,
   },
 ];
 
 const HowToPlan = () => {
   return (
-    <section className="bg-gray-100 dark:bg-gray-950">
-      <div className="max-w-6xl mx-auto px-6 py-16 transition-colors duration-300">
+    <section className="h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-950">
+      <div className="max-w-7xl mx-auto px-6 py-16 transition-colors duration-300">
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -50,37 +50,46 @@ const HowToPlan = () => {
         </div>
 
         {/* Steps */}
-        <div className="relative space-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {steps.map((step, index) => {
-            const isLeft = index % 2 === 0;
+            const chipLight = index === 0
+              ? "bg-blue-50 ring-blue-200/60"
+              : index === 1
+              ? "bg-violet-50 ring-violet-200/60"
+              : index === 2
+              ? "bg-emerald-50 ring-emerald-200/60"
+              : "bg-amber-50 ring-amber-200/60";
+            const chipDark = index === 0
+              ? "dark:bg-blue-950/40 dark:ring-blue-400/20"
+              : index === 1
+              ? "dark:bg-violet-950/40 dark:ring-violet-400/20"
+              : index === 2
+              ? "dark:bg-emerald-950/40 dark:ring-emerald-400/20"
+              : "dark:bg-amber-950/40 dark:ring-amber-400/20";
             return (
-              <div
-                key={index}
-                className={`flex flex-col md:flex-row items-center ${isLeft ? "" : "md:flex-row-reverse"
-                  }`}
-              >
-                {/* Number Circle */}
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[#0C5FA8] text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+              <div key={index} className="relative group rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-gray-900 p-6 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                {/* Accent gradient bar */}
+                <span className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 dark:from-yellow-400 dark:via-orange-300 dark:to-yellow-400 opacity-100"></span>
+
+                {/* Number badge */}
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-500 dark:from-yellow-500 dark:to-amber-400 text-white flex items-center justify-center text-lg font-bold shadow-lg ring-2 ring-white/60 dark:ring-white/10">
                   {step.number}
                 </div>
 
-                {/* Connector Line */}
-                <div className="hidden md:block flex-1 h-1 bg-gray-300 dark:bg-gray-700 mx-6"></div>
-
-                {/* Step Card */}
-                <div className="w-full md:w-1/2 bg-white dark:bg-gray-900 border border-[#0C5FA8]/30 rounded-xl p-6 shadow-md hover:shadow-xl transition">
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg shadow-md">
-                      {step.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                      {step.title}
-                    </h3>
+                {/* Card header */}
+                <div className="flex items-center gap-4 mb-3 mt-2">
+                  <div className={`p-3 rounded-xl ring-1 shadow-sm transition ${chipLight} ${chipDark} group-hover:shadow-lg group-hover:-rotate-3 group-hover:translate-y-0.5`}>
+                    {step.icon}
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    {step.description}
-                  </p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-yellow-300 bg-gradient-to-r from-blue-500/0 via-blue-500/30 to-blue-500/0 dark:via-yellow-300/40 bg-[length:0%_2px] bg-no-repeat bg-bottom group-hover:bg-[length:100%_2px] transition-all duration-300">
+                    {step.title}
+                  </h3>
                 </div>
+
+                {/* Description */}
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             );
           })}

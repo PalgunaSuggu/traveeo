@@ -15,7 +15,7 @@ export function WhyWithUs() {
             </div>
 
             {/* Cards */}
-            <div className="w-full max-w-6xl">
+            <div className="w-full max-w-7xl">
                 <HoverEffect items={projects} />
             </div>
         </div>
