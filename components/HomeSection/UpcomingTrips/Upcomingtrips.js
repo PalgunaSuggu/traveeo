@@ -90,7 +90,7 @@ const Upcomingtrips = () => {
         {/* View All Trips Button */}
         <div className="mt-12 text-center">
           <Button 
-            onClick={() => router.push('/upcomingtrips')}
+            onClick={() => router.push('/trips/upcoming')}
             className="px-8 py-4 text-lg font-medium rounded-xl text-white bg-gradient-to-r from-[#0C5FA8] to-[#1076BE] hover:from-[#0F6AB6] hover:to-[#1280CF] dark:from-[#FAA31A] dark:to-[#e09215] dark:text-black"
           >
             View All Upcoming Trips

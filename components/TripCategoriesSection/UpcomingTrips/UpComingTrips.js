@@ -48,7 +48,7 @@ const UpComingTrips = () => {
   }
 
   return (
-    <section className="bg-gray-100 dark:bg-gray-950 min-h-screen">
+    <section className="bg-gray-100 dark:bg-gray-950 min-h-screen pt-40">
       <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
         {/* Heading */}
         <div className="text-center mb-10 md:mb-12">

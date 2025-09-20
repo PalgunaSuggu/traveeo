@@ -1,5 +1,5 @@
 import React from 'react'
-import UpComingTrips from '../../../components/TripCategoriesSection/UpcomingTrips/UpComingTrips'
+import UpComingTrips from '../../../../components/TripCategoriesSection/UpcomingTrips/UpComingTrips'
 
 const page = () => {
   return (

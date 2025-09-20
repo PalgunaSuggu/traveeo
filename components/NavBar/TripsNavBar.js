@@ -187,10 +187,10 @@ const TripsNavBar = () => {
                     <div key={menu.label} onMouseEnter={() => setOpenIndex(idx)} onMouseLeave={() => setOpenIndex(null)}>
                         <DropdownMenu open={openIndex === idx} onOpenChange={(o) => setOpenIndex(o ? idx : null)}>
                             <DropdownMenuTrigger asChild>
-                                <Button variant="ghost" className="flex items-center gap-1 text-base font-medium bg-transparent hover:bg-transparent hover:text-[#0C5FA8] dark:hover:text-[#FAA31A] focus:outline-none">
+                                <button variant="ghost" className="flex items-center gap-1 text-base font-medium bg-transparent p-2 hover:bg-transparent hover:text-[#0C5FA8] dark:hover:text-[#FAA31A] focus:outline-none">
                                     {menu.label}
                                     <ChevronDown className="w-4 h-4" />
-                                </Button>
+                                </button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="bg-white dark:bg-black/70 shadow-lg rounded-md p-2 w-[520px] md:w-[560px] max-h-[70vh] overflow-auto">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
