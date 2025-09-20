@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "../../components/ModeToggle/theme-provider";
 import "../../styles/globals.css"
 import Navbar from "../../components/NavBar/Navbar";
+import FloatingActionButtons from "../../components/ModeToggle/FloatingActionButtons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Navbar />
           <main>{children}</main>
+          <FloatingActionButtons />
         </ThemeProvider>
       </body>
     </html>
