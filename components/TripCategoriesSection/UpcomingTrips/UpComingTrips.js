@@ -1,7 +1,7 @@
 "use client";
-import React, { useState, useMemo } from 'react'
-import { Button } from '@/components/ui/button'
-import { CalendarDays } from 'lucide-react'
+import { Button } from '@/components/ui/button';
+import { CalendarDays } from 'lucide-react';
+import React, { useMemo, useState } from 'react';
 
 const categories = [
   'All',

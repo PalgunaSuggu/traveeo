@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -13,19 +13,12 @@ const trips = [
   { id: 6, title: "Rome, Italy", location: "Rome", price: "$1400 / Person", image: "https://picsum.photos/600/400?random=6" },
   { id: 7, title: "New York, USA", location: "New York", price: "$1600 / Person", image: "https://picsum.photos/600/400?random=7" },
   { id: 8, title: "Cape Town, South Africa", location: "Cape Town", price: "$1300 / Person", image: "https://picsum.photos/600/400?random=8" },
-  { id: 9, title: "London, UK", location: "London", price: "$1550 / Person", image: "https://picsum.photos/600/400?random=9" },
-  { id: 10, title: "Singapore", location: "Singapore", price: "$1250 / Person", image: "https://picsum.photos/600/400?random=10" },
-  { id: 11, title: "Bangkok, Thailand", location: "Bangkok", price: "$1100 / Person", image: "https://picsum.photos/600/400?random=11" },
-  { id: 12, title: "Barcelona, Spain", location: "Barcelona", price: "$1450 / Person", image: "https://picsum.photos/600/400?random=12" },
 ];
 
+import { useRouter } from 'next/navigation';
+
 const Upcomingtrips = () => {
-  const [visibleTrips, setVisibleTrips] = useState(8);
-
-  const handleLoadMore = () => {
-    setVisibleTrips((prev) => prev + 4);
-  };
-
+  const router = useRouter();
   return (
     <section className="flex items-center justify-center w-full py-16 px-6 transition-colors duration-300">
       <div className="max-w-7xl w-full">
@@ -41,7 +34,7 @@ const Upcomingtrips = () => {
 
         {/* Trips Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {trips.slice(0, visibleTrips).map((trip, index) => {
+          {trips.map((trip) => {
             const durationOptions = [
               "1 Night and 2 Days",
               "2 Nights and 3 Days",
@@ -94,17 +87,16 @@ const Upcomingtrips = () => {
           })}
         </div>
 
-        {/* Load More */}
-        {visibleTrips < trips.length && (
-          <div className="flex justify-center mt-12">
-            <Button
-              onClick={handleLoadMore}
-              className="px-8 py-4 text-lg font-medium rounded-xl text-white bg-gradient-to-r from-[#0C5FA8] to-[#1076BE] hover:from-[#0F6AB6] hover:to-[#1280CF] dark:from-[#FAA31A] dark:to-[#e09215] dark:text-black"
-            >
-              Load More Trips
-            </Button>
-          </div>
-        )}
+        {/* View All Trips Button */}
+        <div className="mt-12 text-center">
+          <Button 
+            onClick={() => router.push('/upcomingtrips')}
+            className="px-8 py-4 text-lg font-medium rounded-xl text-white bg-gradient-to-r from-[#0C5FA8] to-[#1076BE] hover:from-[#0F6AB6] hover:to-[#1280CF] dark:from-[#FAA31A] dark:to-[#e09215] dark:text-black"
+          >
+            View All Upcoming Trips
+          </Button>
+        </div>
+
       </div>
     </section>
   );

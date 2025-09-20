@@ -11,14 +11,14 @@ const blogs = Array.from({ length: 40 }, (_, i) => ({
     date: `Sep ${17 - i}, 2025`,
     link: "#",
     // Added random query to force unique images
-    image: `https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
+    image: `https://picsum.photos/600/400?random=${i + 1}`,
 }));
 
 const Blog = () => {
-    const [visible, setVisible] = useState(6); // show 8 blogs initially
+    const [visible, setVisible] = useState(8); // show 8 blogs initially
 
     const handleLoadMore = () => {
-        setVisible((prev) => prev + 6);
+        setVisible((prev) => prev + 8);
     };
 
     return (
@@ -34,7 +34,7 @@ const Blog = () => {
             </div>
 
             {/* Blog Grid */}
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {blogs.slice(0, visible).map((blog) => (
                     <Link
                         key={blog.id}
